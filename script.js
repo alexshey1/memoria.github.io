@@ -1,87 +1,467 @@
-// Pares de cartas: FOCO TOTAL EM NANOPARTÍCULAS
+// Pares de cartas: Conceitos de polímeros
 const cardPairs = [
     {
         id: 1,
-        pair: ['Nanopartícula Polimérica', 'Estrutura com tamanho entre 1 e 1000 nm, formada por polímeros, projetada para encapsular e transportar substâncias ativas'],
-        icon: '⚛️',
-        explanation: 'Nanopartículas poliméricas são sistemas nanométricos versáteis capazes de carregar fármacos, proteínas, genes ou compostos bioativos. Suas propriedades podem ser ajustadas pela escolha do polímero, método de preparação e funcionalização de superfície, tornando-as ideais para drug delivery direcionado.'
+        pair: ['Polímero', 'Molécula de alto peso molecular formada pela repetição de pequenas unidades unidas por ligações covalentes'],
+        icon: '🧬',
+        explanation: 'Os polímeros são macromoléculas constituídas por unidades repetitivas (monômeros) conectadas por ligações covalentes. A natureza dos monômeros e do processo de polimerização determina propriedades como resistência mecânica, flexibilidade e resposta térmica.'
     },
     {
         id: 2,
-        pair: ['Nanoesfera', 'Tipo de nanopartícula onde o fármaco fica disperso ou dissolvido em uma matriz polimérica sólida, como uma pequena esfera maciça'],
-        icon: '🔵',
-        explanation: 'As nanoesferas possuem estrutura matriz, onde o ativo está homogeneamente distribuído dentro do polímero. A liberação do fármaco ocorre por difusão através da matriz e/ou erosão do polímero. São ideais para liberação sustentada e proteção de moléculas lábeis.'
+        pair: ['Forças intermoleculares', 'Interações fracas entre cadeias poliméricas adjacentes que afetam resistência e temperatura de transição vítrea (Tg)'],
+        icon: '🧲',
+        explanation: 'Forças de Van der Waals, dipolo-dipolo e ligações de hidrogênio atuam entre cadeias distintas. Quanto mais fortes essas interações, maior a coesão do material, elevando Tg e resistência mecânica.'
     },
     {
         id: 3,
-        pair: ['Nanocápsula', 'Tipo de nanopartícula com estrutura "núcleo-casca", onde um núcleo (geralmente oleoso) é revestido por uma membrana de polímero'],
-        icon: '🎯',
-        explanation: 'Nanocápsulas apresentam um núcleo líquido ou semi-sólido envolto por uma parede polimérica fina. O fármaco pode estar dissolvido no núcleo ou adsorvido na parede. Essa arquitetura permite alta capacidade de encapsulação e proteção superior contra degradação enzimática.'
+        pair: ['Forças intramoleculares', 'Ligações covalentes fortes que mantêm os átomos unidos dentro da cadeia polimérica'],
+        icon: '🪢',
+        explanation: 'As ligações intramoleculares determinam a integridade da cadeia. Elas são muito mais fortes que as forças intermoleculares e exigem ruptura de ligações covalentes para alterar a configuração do polímero.'
     },
     {
         id: 4,
-        pair: ['Micela Polimérica', 'Nanoestrutura formada por polímeros anfifílicos, com um núcleo hidrofóbico para carregar fármacos insolúveis e uma coroa hidrofílica'],
-        icon: '🌀',
-        explanation: 'Micelas poliméricas auto-organizam-se espontaneamente em meio aquoso acima da concentração micelar crítica (CMC). O núcleo hidrofóbico solubiliza fármacos lipofílicos, enquanto a coroa hidrofílica garante estabilidade coloidal e biocompatibilidade. Amplamente usadas para fármacos anticâncer.'
+        pair: ['Encadeamento', 'Modo como as unidades repetitivas se ligam sequencialmente ao longo da cadeia'],
+        icon: '🔗',
+        explanation: 'O encadeamento pode ser linear, ramificado ou reticulado, influenciando viscosidade, densidade e propriedades mecânicas do polímero final.'
     },
     {
         id: 5,
-        pair: ['Quitosana', 'Polímero natural catiônico usado para formar nanopartículas por gelificação iônica, com importantes propriedades mucoadesivas'],
-        icon: '🦠',
-        explanation: 'A quitosana forma nanopartículas pela interação eletrostática com poliânions (ex: TPP). Suas cargas positivas promovem mucoadesão, aumentando o tempo de residência em mucosas. É biodegradável, biocompatível e apresenta atividade antimicrobiana intrínseca, sendo ideal para administração oral, nasal e ocular.'
+        pair: ['Taticidade', 'Ordenação espacial dos grupos laterais ao longo da cadeia principal do polímero'],
+        icon: '🧩',
+        explanation: 'A taticidade (isotática, syndiotática ou atática) está ligada à estereoquímica da cadeia. Ela influencia a cristalinidade e as propriedades ópticas e mecânicas.'
     },
     {
         id: 6,
-        pair: ['PLA / PLGA', 'Poliésteres biodegradáveis e biocompatíveis, amplamente usados para criar nanopartículas para a liberação controlada de fármacos'],
-        icon: '💊',
-        explanation: 'PLA (ácido polilático) e PLGA (ácido poli-lático-co-glicólico) degradam-se por hidrólise em metabólitos naturais (ácidos lático e glicólico). A taxa de degradação pode ser controlada pela razão LA:GA. São aprovados pela FDA e extensivamente usados em formulações injetáveis de liberação prolongada.'
+        pair: ['Configuração', 'Arranjo espacial que só muda com ruptura de ligações covalentes'],
+        icon: '🧱',
+        explanation: 'Configuração diz respeito à disposição fixa de átomos em torno de uma ligação dupla ou centro quiral. Alterá-la exige quebra de ligações, diferindo de simples rotações.'
     },
     {
         id: 7,
-        pair: ['Alginato', 'Polissacarídeo que forma nanogéis pela interação com íons de cálcio, usado para imobilizar células ou encapsular proteínas'],
-        icon: '🌊',
-        explanation: 'O alginato sofre gelificação iônica instantânea na presença de Ca²⁺, formando uma rede tridimensional suave. Essa propriedade permite o encapsulamento de células vivas, enzimas e proteínas em condições brandas, preservando sua atividade biológica. Muito usado em engenharia tecidual e terapia celular.'
+        pair: ['Conformação', 'Formas assumidas pela cadeia por rotação em torno de ligações simples'],
+        icon: '🌀',
+        explanation: 'Conformações diferentes (estendida, enrolada) aparecem sem quebrar ligações, afetando propriedades como elasticidade e solubilidade.'
     },
     {
         id: 8,
-        pair: ['PEGilação', 'Processo de revestir nanopartículas com PEG (Polietilenoglicol) para "camuflá-las" do sistema imune e aumentar seu tempo na circulação sanguínea'],
-        icon: '🛡️',
-        explanation: 'A PEGilação cria uma camada hidrofílica que reduz a opsonização (adsorção de proteínas plasmáticas) e o reconhecimento pelo sistema reticuloendotelial (SRE). Isso prolonga significativamente a meia-vida circulatória das nanopartículas, permitindo acúmulo passivo em tumores pelo efeito EPR (Enhanced Permeability and Retention).'
+        pair: ['Cadeias lineares', 'Estruturas poliméricas sem ramificações, associadas a maior densidade e cristalinidade'],
+        icon: '📏',
+        explanation: 'Cadeias lineares se empacotam com eficiência e cristalizam com facilidade, resultando em materiais rígidos e com Tg mais alta.'
     },
     {
         id: 9,
-        pair: ['Nanopartículas de Prata (AgNPs)', 'Nanomaterial inorgânico com potente atividade antimicrobiana, frequentemente estabilizado por polímeros para evitar sua agregação'],
-        icon: '⚪',
-        explanation: 'AgNPs liberam íons Ag⁺ que interagem com membranas celulares bacterianas, DNA e proteínas, causando morte celular. Polímeros como PVP ou quitosana estabilizam as AgNPs, controlando sua liberação e distribuição. São incorporadas em curativos, cateteres e nanocompósitos antimicrobianos.'
+        pair: ['Cadeias reticuladas', 'Estruturas tridimensionais, unidas por ligações cruzadas, típicas de polímeros termorrígidos'],
+        icon: '🕸️',
+        explanation: 'A reticulação cria uma rede permanente que impede fusão ou dissolução. Termorrígidos são duros e mantêm forma mesmo em altas temperaturas.'
     },
     {
         id: 10,
-        pair: ['Nanopartículas de Óxido de Zinco (ZnO NPs)', 'Nanomaterial inorgânico muito usado como filtro UV em nanocompósitos poliméricos (protetores solares) e como agente antibacteriano'],
-        icon: '☀️',
-        explanation: 'ZnO NPs absorvem eficientemente radiação UV-A e UV-B devido ao seu bandgap (~3.3 eV). Também geram espécies reativas de oxigênio (ROS) que conferem atividade antimicrobiana. São incorporadas em formulações dérmicas, têxteis funcionais e embalagens ativas, frequentemente dispersas em matrizes poliméricas.'
+        pair: ['Micela franjada', 'Modelo com regiões cristalinas e amorfas coexistindo na mesma cadeia'],
+        icon: '🎀',
+        explanation: 'As cadeias formam lamelas cristalinas interligadas por segmentos amorfos (franjas). Esse modelo explica propriedades semicristalinas de muitos polímeros.'
     },
     {
         id: 11,
-        pair: ['Nanocelulose', 'Nanomaterial derivado da celulose, usado como agente de reforço para criar nanocompósitos com melhores propriedades mecânicas e de barreira'],
-        icon: '🌱',
-        explanation: 'Nanocelulose (celulose nanocristalina - CNC ou celulose nanofibrilada - CNF) apresenta módulo de Young elevado (~140 GPa), baixa densidade e alta área superficial. Quando incorporada em matrizes poliméricas, melhora significativamente resistência à tração, rigidez e propriedades de barreira a gases, sendo ideal para embalagens sustentáveis.'
+        pair: ['Lamelas', 'Estruturas finas e planares formadas pelo empacotamento ordenado das cadeias poliméricas'],
+        icon: '📐',
+        explanation: 'Lamelas constituem as regiões cristalinas de polímeros semicristalinos, crucialmente influenciando o grau de cristalinidade e a resistência térmica.'
     },
     {
         id: 12,
-        pair: ['Potencial Zeta', 'Medida da carga elétrica na superfície de uma nanopartícula. É um indicador crucial da estabilidade da suspensão, pois cargas altas evitam a aglomeração'],
-        icon: '⚡',
-        explanation: 'O potencial zeta (ζ) mede a carga efetiva na superfície da nanopartícula em solução. Valores absolutos acima de ±30 mV indicam boa estabilidade coloidal devido à repulsão eletrostática entre partículas. É essencial para prever agregação, interações com células e comportamento in vivo das nanopartículas.'
+        pair: ['Polimerização em etapas', 'Crescimento da cadeia por reações de condensação ou adição entre grupos funcionais'],
+        icon: '⏳',
+        explanation: 'Na polimerização em etapas, qualquer espécie reativa (monômero, dímero) pode reagir entre si. O peso molecular cresce lentamente e subprodutos podem ser liberados.'
+    },
+    {
+        id: 13,
+        pair: ['Polimerização em cadeia', 'Crescimento pela adição sequencial de monômeros a um centro ativo'],
+        icon: '🚀',
+        explanation: 'Iniciação, propagação e terminação definem essa polimerização. O peso molecular aumenta rapidamente e os monômeros são consumidos gradualmente.'
+    },
+    {
+        id: 14,
+        pair: ['Temperatura de transição vítrea (Tg)', 'Temperatura na qual o polímero amorfo passa de rígido para mais macio'],
+        icon: '🌡️',
+        explanation: 'A Tg marca a transição de um estado vítreo rígido para um estado borrachoso. Acima dela, há mobilidade segmentar suficiente para amortecer deformações.'
+    },
+    {
+        id: 15,
+        pair: ['Temperatura de cristalização', 'Temperatura onde cadeias se organizam em regiões ordenadas durante o resfriamento'],
+        icon: '❄️',
+        explanation: 'Ao resfriar um polímero semicristalino, as cadeias se reorganizam formando lamelas cristalinas. A taxa de resfriamento afeta o grau de cristalinidade alcançado.'
+    },
+    {
+        id: 16,
+        pair: ['Temperatura de fusão', 'Temperatura em que regiões cristalinas se desordenam passando ao estado líquido'],
+        icon: '🔥',
+        explanation: 'Acima da temperatura de fusão (Tm), a fase cristalina desaparece. Esse parâmetro define limites de processamento de termoplásticos.'
+    },
+    {
+        id: 17,
+        pair: ['Temperatura de amolecimento', 'Temperatura na qual o polímero começa a deformar sob força'],
+        icon: '🧯',
+        explanation: 'O amolecimento ocorre antes da fusão ou Tg, indicando quando o material se torna maleável sob carga, útil para aplicações de moldagem.'
+    },
+    {
+        id: 18,
+        pair: ['Monômero', 'Molécula pequena que se repete e se liga a outras para formar o polímero'],
+        icon: '⚙️',
+        explanation: 'Monômeros contêm grupos funcionais capazes de formar ligações repetitivas. A seleção do monômero determina propriedades do polímero final.'
+    },
+    {
+        id: 19,
+        pair: ['Grau de polimerização', 'Número médio de unidades repetitivas em uma cadeia de polímero'],
+        icon: '📈',
+        explanation: 'Quanto maior o grau de polimerização, maior o peso molecular e, geralmente, melhores propriedades mecânicas. É um parâmetro chave para desempenho.'
+    },
+    {
+        id: 20,
+        pair: ['Homopolímero', 'Polímero formado por apenas um tipo de monômero'],
+        icon: '🟦',
+        explanation: 'Homopolímeros apresentam cadeias uniformes e propriedades mais previsíveis. Ex.: polietileno, poliestireno.'
+    },
+    {
+        id: 21,
+        pair: ['Copolímero', 'Polímero formado por dois ou mais monômeros diferentes'],
+        icon: '🟩',
+        explanation: 'A disposição (alternada, em bloco, enxerto) dos monômeros em copolímeros permite combinar propriedades distintas em um mesmo material.'
+    },
+    {
+        id: 22,
+        pair: ['Elastômero', 'Polímero com alta elasticidade que retorna à forma original após estiramento'],
+        icon: '🪀',
+        explanation: 'Elastômeros apresentam cadeias flexíveis e levemente reticuladas, conferindo grande reversibilidade elástica. Borracha natural e silicone são exemplos.'
+    },
+    {
+        id: 23,
+        pair: ['Termoplástico', 'Polímero que amolece ao aquecer e solidifica ao resfriar, permitindo reciclagem'],
+        icon: '♻️',
+        explanation: 'Termoplásticos podem ser remodelados repetidamente porque não possuem reticulação permanente. Ex.: PET, PP, PVC.'
+    },
+    {
+        id: 24,
+        pair: ['Termorrígido', 'Polímero que endurece permanentemente após cura e não pode ser re-amolecido'],
+        icon: '🧱',
+        explanation: 'A extensa reticulação impede que termorrígidos amoleçam novamente. São resistentes a altas temperaturas, como epóxis e fenólicos.'
+    },
+    {
+        id: 25,
+        pair: ['Cristalinidade', 'Grau de ordenamento das cadeias poliméricas em estruturas compactas'],
+        icon: '💎',
+        explanation: 'Cristalinidade influencia densidade, rigidez e resistência térmica. Depende da estrutura do monômero e das condições de processamento.'
+    },
+    {
+        id: 26,
+        pair: ['Amorfo', 'Estado em que cadeias poliméricas estão desordenadas'],
+        icon: '🌫️',
+        explanation: 'Regiões amorfas possuem cadeias com pouca organização, conferindo transparência e flexibilidade. Vidros poliméricos são majoritariamente amorfos.'
+    },
+    {
+        id: 27,
+        pair: ['Inchamento', 'Aumento de volume do polímero ao absorver solvente sem dissolver completamente'],
+        icon: '💧',
+        explanation: 'O solvente penetra nas cadeias, provocando expansão. Importante em hidrogéis e aplicações de liberação controlada.'
+    },
+    {
+        id: 28,
+        pair: ['Reciclagem mecânica', 'Reprocessamento do polímero para obter um novo produto'],
+        icon: '🔄',
+        explanation: 'Na reciclagem mecânica o polímero é moído, fundido e remodelado. É economicamente viável para termoplásticos limpos e homogêneos.'
+    },
+    {
+        id: 29,
+        pair: ['Tg', 'Símbolo usual para temperatura de transição vítrea'],
+        icon: '📊',
+        explanation: 'Tg é a abreviação de temperatura de transição vítrea. Conhecer esse valor é essencial para definir faixas de operação do material.'
+    },
+    {
+        id: 30,
+        pair: ['Cadeias ramificadas', 'Cadeias poliméricas com ramificações laterais ligadas à cadeia principal'],
+        icon: '🌿',
+        explanation: 'Ramificações reduzem a eficiência de empacotamento, diminuindo a densidade e a cristalinidade. Ex.: polietileno de baixa densidade.'
+    },
+    {
+        id: 31,
+        pair: ['Polímeros Naturais', 'Incluem látex, proteínas, amido e celulose, obtidos diretamente de fontes biológicas'],
+        icon: '🌱',
+        explanation: 'Polímeros naturais apresentam biocompatibilidade, biodegradabilidade e estruturas complexas. Látex origina borrachas naturais, proteínas formam materiais estruturais e funcionais, enquanto amido e celulose são amplamente usados em embalagens e bioplásticos.'
+    },
+    {
+        id: 32,
+        pair: ['Polímeros Sintéticos', 'Plásticos e borrachas produzidos artificialmente, como polietileno e neoprene'],
+        icon: '🏭',
+        explanation: 'Produzidos por processos industriais controlados, polímeros sintéticos oferecem propriedades customizadas, alta durabilidade e ampla aplicabilidade em setores como construção, automotivo e eletrônicos.'
     }
 ];
 
+const glossaryReferences = new Map([
+    [1, { label: 'Encyclopaedia Britannica - Polymer', url: 'https://www.britannica.com/science/polymer' }],
+    [2, { label: 'LibreTexts - Intermolecular Forces', url: 'https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Molecular_Interactions/Intermolecular_Forces' }],
+    [3, { label: 'LibreTexts - Intramolecular Forces', url: 'https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Molecular_Interactions/Intramolecular_Forces' }],
+    [4, { label: 'Wikipedia - Polymer architecture', url: 'https://en.wikipedia.org/wiki/Polymer_architecture' }],
+    [5, { label: 'Wikipedia - Tacticity', url: 'https://en.wikipedia.org/wiki/Tacticity' }],
+    [6, { label: 'Wikipedia - Polymer chemistry (Configuration)', url: 'https://en.wikipedia.org/wiki/Polymer_chemistry#Configuration' }],
+    [7, { label: 'Wikipedia - Conformation', url: 'https://en.wikipedia.org/wiki/Conformation' }],
+    [8, { label: 'Wikipedia - Linear polymer', url: 'https://en.wikipedia.org/wiki/Linear_polymer' }],
+    [9, { label: 'Wikipedia - Cross-linked polymer', url: 'https://en.wikipedia.org/wiki/Cross-linked_polymer' }],
+    [10, { label: 'ScienceDirect Topics - Fringed Micelle Model', url: 'https://www.sciencedirect.com/topics/engineered-materials/fringed-micelle-model' }],
+    [11, { label: 'Wikipedia - Polymer crystal (Lamellae)', url: 'https://en.wikipedia.org/wiki/Polymer_crystal#Lamellae' }],
+    [12, { label: 'Wikipedia - Step-growth polymerization', url: 'https://en.wikipedia.org/wiki/Step-growth_polymerization' }],
+    [13, { label: 'Wikipedia - Chain-growth polymerization', url: 'https://en.wikipedia.org/wiki/Chain-growth_polymerization' }],
+    [14, { label: 'Wikipedia - Glass transition', url: 'https://en.wikipedia.org/wiki/Glass_transition' }],
+    [15, { label: 'Wikipedia - Crystallization of polymers', url: 'https://en.wikipedia.org/wiki/Crystallization_of_polymers' }],
+    [16, { label: 'Wikipedia - Melting point', url: 'https://en.wikipedia.org/wiki/Melting_point#Polymers' }],
+    [17, { label: 'Wikipedia - Softening point', url: 'https://en.wikipedia.org/wiki/Softening_point' }],
+    [18, { label: 'Encyclopaedia Britannica - Monomer', url: 'https://www.britannica.com/science/monomer' }],
+    [19, { label: 'Wikipedia - Degree of polymerization', url: 'https://en.wikipedia.org/wiki/Degree_of_polymerization' }],
+    [20, { label: 'Wikipedia - Homopolymer', url: 'https://en.wikipedia.org/wiki/Homopolymer' }],
+    [21, { label: 'Wikipedia - Copolymer', url: 'https://en.wikipedia.org/wiki/Copolymer' }],
+    [22, { label: 'Encyclopaedia Britannica - Elastomer', url: 'https://www.britannica.com/science/elastomer' }],
+    [23, { label: 'Encyclopaedia Britannica - Thermoplastic', url: 'https://www.britannica.com/science/thermoplastic' }],
+    [24, { label: 'Encyclopaedia Britannica - Thermosetting resin', url: 'https://www.britannica.com/science/thermosetting-resin' }],
+    [25, { label: 'Wikipedia - Crystallinity', url: 'https://en.wikipedia.org/wiki/Crystallinity' }],
+    [26, { label: 'Wikipedia - Amorphous solid', url: 'https://en.wikipedia.org/wiki/Amorphous_solid' }],
+    [27, { label: 'ScienceDirect Topics - Polymer Swelling', url: 'https://www.sciencedirect.com/topics/chemical-engineering/polymer-swelling' }],
+    [28, { label: 'ScienceDirect Topics - Mechanical Recycling', url: 'https://www.sciencedirect.com/topics/engineering/mechanical-recycling' }],
+    [29, { label: 'Wikipedia - Glass transition', url: 'https://en.wikipedia.org/wiki/Glass_transition' }],
+    [30, { label: 'Wikipedia - Branched polymer', url: 'https://en.wikipedia.org/wiki/Branched_polymer' }],
+    [31, { label: 'Encyclopaedia Britannica - Natural polymer', url: 'https://www.britannica.com/science/natural-polymer' }],
+    [32, { label: 'Encyclopaedia Britannica - Synthetic resin', url: 'https://www.britannica.com/science/synthetic-resin' }]
+]);
+
+function loadPlayers() {
+    try {
+        const stored = localStorage.getItem(STORAGE_KEYS.players);
+        if (!stored) return [];
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed)) return [];
+        return parsed
+            .slice(0, 6)
+            .map(player => ({
+                id: Number(player.id) || Date.now(),
+                name: sanitizeNickname(player.name)
+            }));
+    } catch (error) {
+        console.warn('Erro ao carregar jogadores:', error);
+        return [];
+    }
+}
+
+function savePlayers(list) {
+    const payload = list.map(player => ({
+        id: player.id,
+        name: sanitizeNickname(player.name)
+    }));
+    localStorage.setItem(STORAGE_KEYS.players, JSON.stringify(payload));
+}
+
+function createPlayerRecord(name) {
+    return {
+        id: Date.now() + Math.floor(Math.random() * 1000),
+        name: sanitizeNickname(name)
+    };
+}
+
+function createActivePlayer(record) {
+    return {
+        id: record.id,
+        name: record.name,
+        score: 0,
+        attempts: 0,
+        matches: 0
+    };
+}
+
+function refreshActivePlayers() {
+    activePlayers = players.map(createActivePlayer);
+    currentPlayerIndex = 0;
+}
+
+function ensurePlayersAvailable() {
+    if (players.length === 0) {
+        const fallbackName = sanitizeNickname(preferences.nickname);
+        const fallbackRecord = createPlayerRecord(fallbackName);
+        players = [fallbackRecord];
+        savePlayers(players);
+    }
+    if (!activePlayers.length) {
+        refreshActivePlayers();
+    }
+    updatePlayersUI();
+}
+
 const STORAGE_KEYS = {
-    cards: 'nanoparticlesMemoryCustomCards'
+    cards: 'nanoparticlesMemoryCustomCards',
+    preferences: 'nanoparticlesMemoryPreferences',
+    ranking: 'nanoparticlesMemoryRanking',
+    players: 'nanoparticlesMemoryPlayers'
 };
 
 const defaultCardPairs = deepClonePairs(cardPairs);
 applyCustomCards(loadCustomCards());
 
 let pairLookup = buildPairLookup(cardPairs);
+
+const defaultPreferences = {
+    nickname: 'Jogador',
+    accentColor: '#667eea'
+};
+
+const MAX_RANKING_ENTRIES = 10;
+
+function sanitizeNickname(value) {
+    const trimmed = (value ?? '').trim();
+    return trimmed || defaultPreferences.nickname;
+}
+
+function sanitizeAccentColor(value) {
+    if (typeof value !== 'string') return defaultPreferences.accentColor;
+    const hex = value.trim();
+    if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(hex)) {
+        return hex.length === 4
+            ? `#${hex[1]}${hex[1]}${hex[2]}${hex[2]}${hex[3]}${hex[3]}`.toLowerCase()
+            : hex.toLowerCase();
+    }
+    return defaultPreferences.accentColor;
+}
+
+function hexToRgba(hex, alpha = 1) {
+    const sanitized = sanitizeAccentColor(hex).replace('#', '');
+    const bigint = parseInt(sanitized, 16);
+    const r = (bigint >> 16) & 255;
+    const g = (bigint >> 8) & 255;
+    const b = bigint & 255;
+    return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+}
+
+function loadPreferences() {
+    try {
+        const stored = localStorage.getItem(STORAGE_KEYS.preferences);
+        if (!stored) return { ...defaultPreferences };
+        const parsed = JSON.parse(stored);
+        return {
+            nickname: sanitizeNickname(parsed.nickname),
+            accentColor: sanitizeAccentColor(parsed.accentColor)
+        };
+    } catch (error) {
+        console.warn('Erro ao carregar preferências:', error);
+        return { ...defaultPreferences };
+    }
+}
+
+function savePreferences(prefs) {
+    const payload = {
+        nickname: sanitizeNickname(prefs.nickname),
+        accentColor: sanitizeAccentColor(prefs.accentColor)
+    };
+    localStorage.setItem(STORAGE_KEYS.preferences, JSON.stringify(payload));
+}
+
+function applyPreferences(prefs) {
+    const accent = sanitizeAccentColor(prefs.accentColor);
+    document.documentElement.style.setProperty('--accent-color', accent);
+    document.documentElement.style.setProperty('--accent-color-soft', hexToRgba(accent, 0.25));
+    document.documentElement.style.setProperty('--accent-glow', hexToRgba(accent, 0.45));
+    if (accentColorInput) {
+        accentColorInput.value = accent;
+    }
+}
+
+function previewAccentColor(value) {
+    const accent = sanitizeAccentColor(value);
+    document.documentElement.style.setProperty('--accent-color', accent);
+    document.documentElement.style.setProperty('--accent-color-soft', hexToRgba(accent, 0.25));
+    document.documentElement.style.setProperty('--accent-glow', hexToRgba(accent, 0.45));
+}
+
+function loadRanking() {
+    try {
+        const stored = localStorage.getItem(STORAGE_KEYS.ranking);
+        if (!stored) return [];
+        const parsed = JSON.parse(stored);
+        if (!Array.isArray(parsed)) return [];
+        return parsed.map(entry => ({
+            nickname: sanitizeNickname(entry.nickname),
+            mode: entry.mode || 'marathon',
+            score: Number(entry.score) || 0,
+            attempts: Number(entry.attempts) || 0,
+            time: Number(entry.time) || 0,
+            timestamp: Number(entry.timestamp) || Date.now()
+        }));
+    } catch (error) {
+        console.warn('Erro ao carregar ranking:', error);
+        return [];
+    }
+}
+
+function saveRanking(entries) {
+    localStorage.setItem(STORAGE_KEYS.ranking, JSON.stringify(entries));
+}
+
+function compareRankingEntries(a, b) {
+    if (b.score !== a.score) return b.score - a.score;
+    if (a.time !== b.time) return a.time - b.time;
+    return a.attempts - b.attempts;
+}
+
+function addRankingEntry(entry) {
+    rankingEntries.push(entry);
+    const currentModeEntries = rankingEntries
+        .filter(item => item.mode === entry.mode)
+        .sort(compareRankingEntries)
+        .slice(0, MAX_RANKING_ENTRIES);
+    const otherEntries = rankingEntries.filter(item => item.mode !== entry.mode);
+    rankingEntries = otherEntries.concat(currentModeEntries);
+    saveRanking(rankingEntries);
+}
+
+function formatDate(timestamp) {
+    try {
+        const date = new Date(timestamp);
+        return date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
+    } catch (error) {
+        return '';
+    }
+}
+
+function formatSecondsDisplay(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+}
+
+function updateRankingTable() {
+    if (!rankingTableBody) return;
+    rankingTableBody.innerHTML = '';
+    if (!rankingEntries.length) {
+        const emptyRow = document.createElement('tr');
+        emptyRow.className = 'ranking-empty-row';
+        emptyRow.innerHTML = '<td colspan="7">Jogue uma partida para aparecer no ranking!</td>';
+        rankingTableBody.appendChild(emptyRow);
+        return;
+    }
+
+    const sorted = [...rankingEntries].sort((a, b) => {
+        const modeOrder = a.mode.localeCompare(b.mode);
+        if (modeOrder !== 0) return modeOrder;
+        return compareRankingEntries(a, b);
+    });
+
+    sorted.forEach((entry, index) => {
+        const row = document.createElement('tr');
+        const modeInfo = gameModes[entry.mode] ?? { label: entry.mode };
+        row.innerHTML = `
+            <td>${index + 1}</td>
+            <td>${entry.nickname}</td>
+            <td>${modeInfo.label}</td>
+            <td>${entry.score}</td>
+            <td>${entry.attempts}</td>
+            <td>${formatSecondsDisplay(entry.time)}</td>
+            <td>${formatDate(entry.timestamp)}</td>
+        `;
+        rankingTableBody.appendChild(row);
+    });
+}
 
 // Personalização de Cartas
 function deepClonePairs(pairs) {
@@ -301,7 +681,13 @@ const gameModes = {
     marathon: {
         id: 'marathon',
         label: 'Maratona',
-        pairCount: 12,
+        pairCount: 16,
+        timeLimit: null
+    },
+    legend: {
+        id: 'legend',
+        label: 'Doutorado',
+        pairCount: 32,
         timeLimit: null
     }
 };
@@ -335,6 +721,13 @@ const timerElement = document.getElementById('timer');
 const pairsElement = document.getElementById('pairs');
 const btnRestart = document.getElementById('btnRestart');
 const modeButtons = document.querySelectorAll('.mode-button');
+const accentColorInput = document.getElementById('accentColor');
+const newPlayerInput = document.getElementById('newPlayerName');
+const btnAddPlayer = document.getElementById('btnAddPlayer');
+const playersListElement = document.getElementById('playersList');
+const playersScoreboardElement = document.getElementById('playersScoreboard');
+const currentPlayerNameElement = document.getElementById('currentPlayerName');
+const rankingTableBody = document.getElementById('rankingTableBody');
 const glossaryListElement = document.getElementById('glossaryList');
 const glossaryEmptyElement = document.getElementById('glossaryEmpty');
 const glossaryTitleElement = document.getElementById('glossaryTitle');
@@ -348,6 +741,8 @@ const btnPlayAgain = document.getElementById('btnPlayAgain');
 const finalScore = document.getElementById('finalScore');
 const finalTime = document.getElementById('finalTime');
 const finalAttempts = document.getElementById('finalAttempts');
+const finalWinnerElement = document.getElementById('finalWinner');
+const finalPlayersSummaryElement = document.getElementById('finalPlayersSummary');
 const modalCustomizer = document.getElementById('modalCustomizer');
 const btnOpenCustomizerIntro = document.getElementById('btnOpenCustomizerIntro');
 const btnCloseCustomizer = document.getElementById('btnCloseCustomizer');
@@ -363,6 +758,7 @@ const btnResetAllCards = document.getElementById('btnResetAllCards');
 const btnOpenEmojiPicker = document.getElementById('btnOpenEmojiPicker');
 const emojiPicker = document.getElementById('emojiPicker');
 const btnBackToIntro = document.getElementById('btnBackToIntro');
+const btnClearRanking = document.getElementById('btnClearRanking');
 const modalConfirm = document.getElementById('modalConfirm');
 const confirmTitle = document.getElementById('confirmTitle');
 const confirmMessage = document.getElementById('confirmMessage');
@@ -371,12 +767,145 @@ const btnConfirmNo = document.getElementById('btnConfirmNo');
 const toastElement = document.getElementById('customizerToast');
 
 let pendingConfirmAction = null;
+let preferences = loadPreferences();
+let rankingEntries = loadRanking();
+let players = loadPlayers();
+let activePlayers = players.map(createActivePlayer);
+let currentPlayerIndex = 0;
+
+function getCurrentPlayer() {
+    if (!activePlayers.length) return null;
+    return activePlayers[currentPlayerIndex % activePlayers.length];
+}
+
+function updatePlayersUI() {
+    if (!playersListElement) return;
+    playersListElement.innerHTML = '';
+    if (!players.length) {
+        const emptyItem = document.createElement('li');
+        emptyItem.className = 'players-empty';
+        emptyItem.textContent = 'Nenhum jogador adicionado.';
+        playersListElement.appendChild(emptyItem);
+    } else {
+        const fragment = document.createDocumentFragment();
+        players.forEach((player, index) => {
+            const item = document.createElement('li');
+            item.innerHTML = `
+                <span>${index + 1}º - ${player.name}</span>
+                <button type="button" class="remove-player" data-player-id="${player.id}">✖</button>
+            `;
+            fragment.appendChild(item);
+        });
+        playersListElement.appendChild(fragment);
+    }
+
+    if (playersScoreboardElement) {
+        playersScoreboardElement.innerHTML = '';
+        if (activePlayers.length) {
+            const fragment = document.createDocumentFragment();
+            activePlayers.forEach((player, index) => {
+                const card = document.createElement('div');
+                card.className = 'player-score-card';
+                if (index === currentPlayerIndex % activePlayers.length) {
+                    card.classList.add('active');
+                }
+                card.innerHTML = `
+                    <div class="player-score-name">${player.name}</div>
+                    <div class="player-score-meta">
+                        <span>Pontos: <strong>${player.score}</strong></span>
+                        <span>Acertos: <strong>${player.matches}</strong></span>
+                        <span>Tentativas: <strong>${player.attempts}</strong></span>
+                    </div>
+                `;
+                fragment.appendChild(card);
+            });
+            playersScoreboardElement.appendChild(fragment);
+        }
+    }
+
+    const currentPlayer = getCurrentPlayer();
+    if (currentPlayerNameElement) {
+        currentPlayerNameElement.textContent = currentPlayer ? currentPlayer.name : '—';
+    }
+}
+
+function addPlayer(name) {
+    const sanitized = sanitizeNickname(name);
+    if (!sanitized) {
+        showToast('Informe um nickname válido.');
+        return;
+    }
+    if (players.some(player => player.name.toLowerCase() === sanitized.toLowerCase())) {
+        showToast('Esse nickname já foi adicionado.');
+        return;
+    }
+    if (players.length >= 6) {
+        showToast('Limite máximo de 6 jogadores atingido.');
+        return;
+    }
+    const newRecord = createPlayerRecord(sanitized);
+    players.push(newRecord);
+    savePlayers(players);
+    refreshActivePlayers();
+    updatePlayersUI();
+}
+
+function removePlayer(playerId) {
+    const index = players.findIndex(player => player.id === playerId);
+    if (index === -1) return;
+    players.splice(index, 1);
+    savePlayers(players);
+    refreshActivePlayers();
+    updatePlayersUI();
+}
+
+function resetPlayersStats() {
+    activePlayers = activePlayers.map(player => ({
+        ...player,
+        score: 0,
+        attempts: 0,
+        matches: 0
+    }));
+    currentPlayerIndex = 0;
+    updatePlayersUI();
+}
+
+function awardPointsToCurrentPlayer(points) {
+    const player = getCurrentPlayer();
+    if (!player) return;
+    player.score += points;
+    player.matches += 1;
+    updatePlayersUI();
+}
+
+function registerAttemptForCurrentPlayer() {
+    const player = getCurrentPlayer();
+    if (!player) return;
+    player.attempts += 1;
+    updatePlayersUI();
+}
+
+function advanceTurn() {
+    if (!activePlayers.length) return;
+    currentPlayerIndex = (currentPlayerIndex + 1) % activePlayers.length;
+    updatePlayersUI();
+}
+
+function clearRanking() {
+    rankingEntries = [];
+    localStorage.removeItem(STORAGE_KEYS.ranking);
+    updateRankingTable();
+    showToast('Ranking limpo com sucesso!');
+}
 
 function initGame() {
-resetGameState();
-createCards();
-shuffleCards();
-renderCards();
+    ensurePlayersAvailable();
+    refreshActivePlayers();
+    resetPlayersStats();
+    resetGameState();
+    createCards();
+    shuffleCards();
+    renderCards();
     startTimer();
 }
 
@@ -404,6 +933,7 @@ function resetGameState() {
     };
     
     updateUI();
+    updatePlayersUI();
     modalExplanation.classList.remove('active');
     modalFinish.classList.remove('active');
     resetGlossaryUI();
@@ -460,6 +990,7 @@ function renderCards() {
     gameBoard.innerHTML = '';
     gameBoard.classList.toggle('mode-sprint', gameState.mode === 'sprint');
     gameBoard.classList.toggle('mode-marathon', gameState.mode === 'marathon');
+    gameBoard.classList.toggle('mode-legend', gameState.mode === 'legend');
     gameState.cards.forEach((card, index) => {
         const cardElement = createCardElement(card, index);
         gameBoard.appendChild(cardElement);
@@ -507,6 +1038,7 @@ function handleCardClick(index) {
     if (gameState.flippedCards.length === 2) {
         gameState.canFlip = false;
         gameState.attempts++;
+        registerAttemptForCurrentPlayer();
         updateUI();
         
         setTimeout(() => checkMatch(), 1500);
@@ -561,6 +1093,7 @@ function handleMatch(index1, index2, card) {
     // Atualizar pontuação e pares
     gameState.score += 10;
     gameState.matchedPairs++;
+    awardPointsToCurrentPlayer(10);
     
     // Reproduzir som de sucesso
     playSound('success');
@@ -609,6 +1142,7 @@ function handleMismatch(index1, index2) {
         gameState.canFlip = true;
         
         updateUI();
+        advanceTurn();
     }, 1800);
 }
 
@@ -822,6 +1356,57 @@ function finishGame(options = {}) {
         if (badgeMessageElement) badgeMessageElement.textContent = 'O tempo acabou! Tente novamente no modo Sprint para melhorar sua agilidade.';
     }
 
+    const sortedPlayers = [...activePlayers].sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        if (a.attempts !== b.attempts) return a.attempts - b.attempts;
+        return a.name.localeCompare(b.name);
+    });
+
+    if (sortedPlayers.length && finalPlayersSummaryElement && finalWinnerElement) {
+        const topScore = sortedPlayers[0].score;
+        const winners = sortedPlayers.filter(player => player.score === topScore && topScore > 0);
+        if (winners.length) {
+            finalWinnerElement.textContent = winners.map(player => player.name).join(', ');
+        } else {
+            finalWinnerElement.textContent = sortedPlayers[0].score === 0 ? 'Nenhum vencedor' : sortedPlayers[0].name;
+        }
+
+        finalPlayersSummaryElement.innerHTML = sortedPlayers.map((player, index) => {
+            const isWinner = winners.some(winner => winner.id === player.id);
+            return `
+                <div class="final-player-card${isWinner ? ' winner' : ''}">
+                    <div class="final-player-header">
+                        <span class="final-player-rank">${index + 1}º</span>
+                        <span class="final-player-name">${player.name}</span>
+                    </div>
+                    <div class="final-player-stats">
+                        <span>Pontos: <strong>${player.score}</strong></span>
+                        <span>Acertos: <strong>${player.matches}</strong></span>
+                        <span>Tentativas: <strong>${player.attempts}</strong></span>
+                        <span>Tempo: <strong>${formatSeconds(gameState.elapsedSeconds)}</strong></span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+
+        sortedPlayers.forEach(player => {
+            addRankingEntry({
+                nickname: player.name,
+                mode: gameState.mode,
+                score: player.score,
+                attempts: player.attempts,
+                time: gameState.elapsedSeconds,
+                timestamp: Date.now()
+            });
+        });
+        updateRankingTable();
+    } else {
+        if (finalWinnerElement) finalWinnerElement.textContent = '—';
+        if (finalPlayersSummaryElement) {
+            finalPlayersSummaryElement.innerHTML = '<p class="summary-empty">Nenhum jogador registrado.</p>';
+        }
+    }
+
     modalFinish.classList.add('active');
 }
 
@@ -920,10 +1505,19 @@ function backToIntro() {
     modalCustomizer?.classList.remove('customizer-visible');
     modalConfirm?.classList.remove('customizer-visible');
     emojiPicker?.classList.remove('open');
+    applyPreferences(preferences);
+    updateRankingTable();
 }
 
 // Event listener para botão de começar
 btnStart.addEventListener('click', () => {
+    const rawAccent = accentColorInput?.value ?? '';
+    preferences = {
+        nickname: getCurrentPlayer()?.name || defaultPreferences.nickname,
+        accentColor: sanitizeAccentColor(rawAccent)
+    };
+    savePreferences(preferences);
+    applyPreferences(preferences);
     startGame();
 });
 
@@ -954,9 +1548,45 @@ modalConfirm?.addEventListener('click', event => {
 // Esconder container do jogo inicialmente
 window.addEventListener('DOMContentLoaded', () => {
     gameContainer.style.display = 'none';
+    applyPreferences(preferences);
+    updateRankingTable();
+    updatePlayersUI();
     updateModePreview();
     glossaryListElement.addEventListener('click', handleGlossaryClick);
     initializeCustomizer();
+    accentColorInput?.addEventListener('input', event => {
+        previewAccentColor(event.target.value);
+    });
+    btnAddPlayer?.addEventListener('click', () => {
+        const value = newPlayerInput?.value ?? '';
+        addPlayer(value);
+        if (newPlayerInput) {
+            newPlayerInput.value = '';
+            newPlayerInput.focus();
+        }
+    });
+    newPlayerInput?.addEventListener('keydown', event => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            addPlayer(event.target.value);
+            event.target.value = '';
+        }
+    });
+    playersListElement?.addEventListener('click', event => {
+        const button = event.target.closest('.remove-player');
+        if (!button) return;
+        const id = Number(button.dataset.playerId);
+        removePlayer(id);
+    });
+    btnClearRanking?.addEventListener('click', () => {
+        openConfirmModal({
+            title: 'Limpar Ranking',
+            message: 'Tem certeza que deseja remover todos os registros de ranking? Essa ação não pode ser desfeita.',
+            onConfirm: () => {
+                clearRanking();
+            }
+        });
+    });
 });
 
 // Glossário
@@ -972,7 +1602,8 @@ function addGlossaryEntry(pairId) {
         title: pairData.pair[0],
         description: pairData.pair[1],
         explanation: pairData.explanation,
-        icon: pairData.icon
+        icon: pairData.icon,
+        reference: glossaryReferences.get(pairId) ?? null
     });
 
     renderGlossaryList();
@@ -1018,10 +1649,15 @@ function showGlossaryDetails(pairId) {
     if (!entry) return;
 
     gameState.activeGlossaryId = pairId;
-    glossaryTitleElement.textContent = `${entry.icon} ${entry.title}`;
+    glossaryTitleElement.textContent = entry.title;
+    const extraLink = entry.reference ? `
+        <p class="glossary-reference">
+            <a href="${entry.reference.url}" target="_blank" rel="noopener noreferrer">🔗 ${entry.reference.label}</a>
+        </p>` : '';
     glossaryDescriptionElement.innerHTML = `
-        <strong>Descrição:</strong> ${entry.description}<br><br>
-        <strong>Explicação:</strong> ${entry.explanation}
+        <p>${entry.description}</p>
+        <p>${entry.explanation}</p>
+        ${extraLink}
     `;
 
     renderGlossaryList();

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nanopartículas Poliméricas - Jogo da Memória</title>
+    <title>Química de Polímeros - Jogo da Memória</title>
     <link rel="stylesheet" href="styles.css">
     <!-- Biblioteca de confetti -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -25,13 +25,13 @@
         <div class="intro-content">
             <div class="intro-header">
                 <div class="intro-icon">⚛️</div>
-                <h1 class="intro-title">Nanopartículas Poliméricas</h1>
-                <p class="intro-subtitle">Jogo da Memória em Nanotecnologia</p>
+                <h1 class="intro-title">Química de Polímeros</h1>
+                <p class="intro-subtitle">Jogo da Memória de polímeros</p>
             </div>
             
             <div class="intro-description">
                 <h2>🎯 Objetivo</h2>
-                <p>Domine os conceitos fundamentais de nanopartículas poliméricas, suas estruturas, polímeros e aplicações em drug delivery!</p>
+                <p>Domine os conceitos fundamentais abordados na disciplina, suas estruturas, polímeros e aplicações em drug delivery!</p>
                 
                 <div class="intro-features">
                     <div class="feature">
@@ -60,6 +60,55 @@
                     <li><strong>Modos de jogo:</strong> Escolha Sprint (6 pares, tempo controlado) ou Maratona (12 pares, sem limite de tempo)</li>
                     <li>Complete todos os pares para reforçar seus conhecimentos em nanotecnologia!</li>
                 </ul>
+            </div>
+
+            <div class="personalization-section">
+                <h3>🎨 Personalize sua Partida</h3>
+                <div class="personalization-grid">
+                    <div class="personalization-field">
+                        <label for="newPlayerName">Adicionar jogador</label>
+                        <div class="player-add-row">
+                            <input type="text" id="newPlayerName" placeholder="Nickname do jogador" maxlength="18" />
+                            <button type="button" class="btn-add-player" id="btnAddPlayer">Adicionar</button>
+                        </div>
+                        <p class="field-hint">Pressione Enter para adicionar. Máximo de 6 jogadores.</p>
+                    </div>
+                </div>
+                <div class="players-manager">
+                    <h4>👥 Jogadores Ativos</h4>
+                    <ul class="players-list" id="playersList">
+                        <li class="players-empty">Nenhum jogador adicionado.</li>
+                    </ul>
+                    <p class="players-hint">A ordem define a sequência de jogadas.</p>
+                </div>
+            </div>
+
+            <div class="ranking-intro" id="rankingIntroPanel">
+                <div class="ranking-header">
+                    <h3>🏅 Melhores Resultados</h3>
+                    <p>Fique entre os melhores completando partidas com rapidez e precisão.</p>
+                    <button class="btn-clear-ranking" id="btnClearRanking" type="button">🧹 Limpar Ranking</button>
+                </div>
+                <div class="ranking-table-wrapper">
+                    <table class="ranking-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jogador</th>
+                                <th>Modo</th>
+                                <th>Pontuação</th>
+                                <th>Tentativas</th>
+                                <th>Tempo</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody id="rankingTableBody">
+                            <tr class="ranking-empty-row">
+                                <td colspan="7">Jogue uma partida para aparecer no ranking!</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -111,7 +160,7 @@
                     <label for="customizerIcon">Ícone (emoji)</label>
                     <div class="icon-input-group">
                         <input type="text" id="customizerIcon" required maxlength="2" />
-                        <button type="button" class="btn-emoji" id="btnOpenEmojiPicker" title="Escolher emoji">😀</button>
+                        <button type="button" class="btn-emoji" id="btnOpenEmojiPicker" title="Escolher emoji" aria-label="Selecionar emoji"></button>
                     </div>
                     <div class="emoji-picker" id="emojiPicker">
                         <button type="button" data-emoji="⚛️">⚛️</button>
@@ -134,7 +183,7 @@
                 </div>
                 <div>
                     <label for="customizerId">ID</label>
-                    <input type="text" id="customizerId" disabled />
+                    <input type="text" id="customizerId" class="id-input" disabled />
                 </div>
             </div>
             <div class="customizer-actions">
@@ -167,7 +216,7 @@
 <div class="container" id="gameContainer">
         <!-- Cabeçalho -->
         <header>
-            <h1>⚛️ Nanopartículas Poliméricas</h1>
+            <h1>⚛️ Matrizes Poliméricas</h1>
             <p class="subtitle">Jogo da Memória</p>
         </header>
 
@@ -178,13 +227,21 @@
         <!-- Seleção de Modo -->
         <div class="mode-selector" id="modeSelector">
             <button class="mode-button" data-mode="sprint">⚡ Sprint (6 pares)</button>
-            <button class="mode-button active" data-mode="marathon">🧠 Maratona (12 pares)</button>
+            <button class="mode-button active" data-mode="marathon">🧠 Maratona (16 pares)</button>
+            <button class="mode-button" data-mode="legend">🔬 Doutorado (32 pares)</button>
         </div>
 
         <div class="main-content">
             <div class="game-section">
                 <!-- Painel de Informações -->
                 <div class="info-panel">
+                    <div class="players-info">
+                        <div class="current-player">
+                            <span class="current-player-label">Vez de:</span>
+                            <span class="current-player-name" id="currentPlayerName">Jogador</span>
+                        </div>
+                        <div class="players-scoreboard" id="playersScoreboard"></div>
+                    </div>
                     <div class="info-card">
                         <div class="info-label">Pontuação</div>
                         <div class="info-value" id="score">0</div>
@@ -199,7 +256,7 @@
                     </div>
                     <div class="info-card">
                         <div class="info-label">Pares Encontrados</div>
-                        <div class="info-value" id="pairs">0/12</div>
+                        <div class="info-value" id="pairs">0/16</div>
                     </div>
                 </div>
 
@@ -264,7 +321,12 @@
                         <span class="stat-label">Tentativas:</span>
                         <span class="stat-value" id="finalAttempts">0</span>
                     </div>
+                    <div class="stat">
+                        <span class="stat-label">Vencedor(es):</span>
+                        <span class="stat-value" id="finalWinner">-</span>
+                    </div>
                 </div>
+                <div class="final-players-summary" id="finalPlayersSummary"></div>
                 <button class="btn-close" id="btnPlayAgain">🎮 Jogar Novamente</button>
             </div>
         </div>
