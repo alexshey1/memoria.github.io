@@ -717,7 +717,6 @@ const btnStart = document.getElementById('btnStart');
 const gameContainer = document.getElementById('gameContainer');
 const gameBoard = document.getElementById('gameBoard');
 const scoreElement = document.getElementById('score');
-const attemptsElement = document.getElementById('attempts');
 const timerElement = document.getElementById('timer');
 const pairsElement = document.getElementById('pairs');
 const btnRestart = document.getElementById('btnRestart');
@@ -1206,7 +1205,6 @@ function updateTimerDisplay() {
 // Atualizar UI
 function updateUI() {
     scoreElement.textContent = gameState.score;
-    attemptsElement.textContent = gameState.attempts;
     const totalPairs = gameModes[gameState.mode].pairCount;
     pairsElement.textContent = `${gameState.matchedPairs}/${totalPairs}`;
 }

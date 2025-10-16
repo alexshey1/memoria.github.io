@@ -676,16 +676,26 @@ body {
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
-.intro-icon {
-    font-size: 4.5rem;
-    margin-bottom: 15px;
-    animation: float 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6));
+.intro-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 
-@keyframes float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-15px) rotate(5deg); }
+.intro-icon {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .intro-title {
