@@ -1509,12 +1509,18 @@ header:hover .subtitle {
 }
 
 .game-board.mode-legend .card-icon {
-    font-size: 1.85rem;
+    font-size: 1.45rem;
 }
 
 .game-board.mode-legend .card-content {
-    font-size: 0.58rem;
-    line-height: 1.2;
+    font-size: 0.42rem;
+    line-height: 1.05;
+    word-break: break-word;
+    line-clamp: 5;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Cartas Modernizadas */
@@ -1656,10 +1662,19 @@ header:hover .subtitle {
     font-size: 2.3rem;
     margin-bottom: 5px;
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
-    display: block !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
     opacity: 1 !important;
     visibility: visible !important;
+}
+
+.card-icon img {
+    max-width: 48px;
+    max-height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
 }
 
 .card-content {

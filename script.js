@@ -106,6 +106,7 @@ const cardPairs = [
         id: 18,
         pair: ['Monômero', 'Molécula pequena que se repete e se liga a outras para formar o polímero'],
         icon: '⚙️',
+        iconImage: 'icones/image-Photoroom.png',
         explanation: 'Monômeros contêm grupos funcionais capazes de formar ligações repetitivas. A seleção do monômero determina propriedades do polímero final.'
     },
     {
@@ -198,33 +199,33 @@ const glossaryReferences = new Map([
     [1, { label: 'Encyclopaedia Britannica - Polymer', url: 'https://www.britannica.com/science/polymer' }],
     [2, { label: 'LibreTexts - Intermolecular Forces', url: 'https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Molecular_Interactions/Intermolecular_Forces' }],
     [3, { label: 'LibreTexts - Intramolecular Forces', url: 'https://chem.libretexts.org/Bookshelves/Physical_and_Theoretical_Chemistry_Textbook_Maps/Supplemental_Modules_(Physical_and_Theoretical_Chemistry)/Physical_Properties_of_Matter/Molecular_Interactions/Intramolecular_Forces' }],
-    [4, { label: 'Wikipedia - Polymer architecture', url: 'https://en.wikipedia.org/wiki/Polymer_architecture' }],
-    [5, { label: 'Wikipedia - Tacticity', url: 'https://en.wikipedia.org/wiki/Tacticity' }],
-    [6, { label: 'Wikipedia - Polymer chemistry (Configuration)', url: 'https://en.wikipedia.org/wiki/Polymer_chemistry#Configuration' }],
-    [7, { label: 'Wikipedia - Conformation', url: 'https://en.wikipedia.org/wiki/Conformation' }],
-    [8, { label: 'Wikipedia - Linear polymer', url: 'https://en.wikipedia.org/wiki/Linear_polymer' }],
-    [9, { label: 'Wikipedia - Cross-linked polymer', url: 'https://en.wikipedia.org/wiki/Cross-linked_polymer' }],
+    [4, { label: 'ScienceDirect Topics - Polymer Architecture', url: 'https://www.sciencedirect.com/topics/materials-science/polymer-architecture' }],
+    [5, { label: 'ScienceDirect Topics - Tacticity', url: 'https://www.sciencedirect.com/topics/chemistry/tacticity' }],
+    [6, { label: 'ScienceDirect Topics - Polymer Configuration', url: 'https://www.sciencedirect.com/topics/chemistry/polymer-configuration' }],
+    [7, { label: 'ScienceDirect Topics - Polymer Conformation', url: 'https://www.sciencedirect.com/topics/chemistry/polymer-conformation' }],
+    [8, { label: 'ScienceDirect Topics - Linear Polymer', url: 'https://www.sciencedirect.com/topics/chemistry/linear-polymer' }],
+    [9, { label: 'ScienceDirect Topics - Crosslinked Polymer', url: 'https://www.sciencedirect.com/topics/materials-science/crosslinked-polymer' }],
     [10, { label: 'ScienceDirect Topics - Fringed Micelle Model', url: 'https://www.sciencedirect.com/topics/engineered-materials/fringed-micelle-model' }],
-    [11, { label: 'Wikipedia - Polymer crystal (Lamellae)', url: 'https://en.wikipedia.org/wiki/Polymer_crystal#Lamellae' }],
-    [12, { label: 'Wikipedia - Step-growth polymerization', url: 'https://en.wikipedia.org/wiki/Step-growth_polymerization' }],
-    [13, { label: 'Wikipedia - Chain-growth polymerization', url: 'https://en.wikipedia.org/wiki/Chain-growth_polymerization' }],
-    [14, { label: 'Wikipedia - Glass transition', url: 'https://en.wikipedia.org/wiki/Glass_transition' }],
-    [15, { label: 'Wikipedia - Crystallization of polymers', url: 'https://en.wikipedia.org/wiki/Crystallization_of_polymers' }],
-    [16, { label: 'Wikipedia - Melting point', url: 'https://en.wikipedia.org/wiki/Melting_point#Polymers' }],
-    [17, { label: 'Wikipedia - Softening point', url: 'https://en.wikipedia.org/wiki/Softening_point' }],
+    [11, { label: 'ScienceDirect Topics - Lamellae in Polymers', url: 'https://www.sciencedirect.com/topics/chemistry/lamellae' }],
+    [12, { label: 'LibreTexts - Step-Growth Polymerization', url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/28:_Polymers/28.3:_Step-Growth_Polymerization' }],
+    [13, { label: 'LibreTexts - Chain-Growth Polymerization', url: 'https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Organic_Chemistry_(Morsch_et_al.)/28:_Polymers/28.2:_Chain-Growth_Polymerization' }],
+    [14, { label: 'ScienceDirect Topics - Glass Transition Temperature', url: 'https://www.sciencedirect.com/topics/chemistry/glass-transition-temperature' }],
+    [15, { label: 'ScienceDirect Topics - Polymer Crystallization', url: 'https://www.sciencedirect.com/topics/materials-science/polymer-crystallization' }],
+    [16, { label: 'ScienceDirect Topics - Melting Temperature', url: 'https://www.sciencedirect.com/topics/chemistry/melting-temperature' }],
+    [17, { label: 'ScienceDirect Topics - Softening Point', url: 'https://www.sciencedirect.com/topics/engineering/softening-point' }],
     [18, { label: 'Encyclopaedia Britannica - Monomer', url: 'https://www.britannica.com/science/monomer' }],
-    [19, { label: 'Wikipedia - Degree of polymerization', url: 'https://en.wikipedia.org/wiki/Degree_of_polymerization' }],
-    [20, { label: 'Wikipedia - Homopolymer', url: 'https://en.wikipedia.org/wiki/Homopolymer' }],
-    [21, { label: 'Wikipedia - Copolymer', url: 'https://en.wikipedia.org/wiki/Copolymer' }],
+    [19, { label: 'ScienceDirect Topics - Degree of Polymerization', url: 'https://www.sciencedirect.com/topics/chemistry/degree-of-polymerization' }],
+    [20, { label: 'ScienceDirect Topics - Homopolymer', url: 'https://www.sciencedirect.com/topics/chemistry/homopolymer' }],
+    [21, { label: 'ScienceDirect Topics - Copolymer', url: 'https://www.sciencedirect.com/topics/chemistry/coplymer' }],
     [22, { label: 'Encyclopaedia Britannica - Elastomer', url: 'https://www.britannica.com/science/elastomer' }],
     [23, { label: 'Encyclopaedia Britannica - Thermoplastic', url: 'https://www.britannica.com/science/thermoplastic' }],
     [24, { label: 'Encyclopaedia Britannica - Thermosetting resin', url: 'https://www.britannica.com/science/thermosetting-resin' }],
-    [25, { label: 'Wikipedia - Crystallinity', url: 'https://en.wikipedia.org/wiki/Crystallinity' }],
-    [26, { label: 'Wikipedia - Amorphous solid', url: 'https://en.wikipedia.org/wiki/Amorphous_solid' }],
+    [25, { label: 'ScienceDirect Topics - Crystallinity', url: 'https://www.sciencedirect.com/topics/chemistry/crystallinity' }],
+    [26, { label: 'Encyclopaedia Britannica - Amorphous Solid', url: 'https://www.britannica.com/science/amorphous-solid' }],
     [27, { label: 'ScienceDirect Topics - Polymer Swelling', url: 'https://www.sciencedirect.com/topics/chemical-engineering/polymer-swelling' }],
     [28, { label: 'ScienceDirect Topics - Mechanical Recycling', url: 'https://www.sciencedirect.com/topics/engineering/mechanical-recycling' }],
-    [29, { label: 'Wikipedia - Glass transition', url: 'https://en.wikipedia.org/wiki/Glass_transition' }],
-    [30, { label: 'Wikipedia - Branched polymer', url: 'https://en.wikipedia.org/wiki/Branched_polymer' }],
+    [29, { label: 'ScienceDirect Topics - Glass Transition Temperature', url: 'https://www.sciencedirect.com/topics/materials-science/glass-transition-temperature' }],
+    [30, { label: 'ScienceDirect Topics - Branched Polymer', url: 'https://www.sciencedirect.com/topics/chemistry/branched-polymer' }],
     [31, { label: 'Encyclopaedia Britannica - Natural polymer', url: 'https://www.britannica.com/science/natural-polymer' }],
     [32, { label: 'Encyclopaedia Britannica - Synthetic resin', url: 'https://www.britannica.com/science/synthetic-resin' }]
 ]);
@@ -951,6 +952,7 @@ function createCards() {
             pairId: pair.id,
             content: pair.pair[0],
             icon: pair.icon,
+            iconImage: pair.iconImage ?? null,
             explanation: pair.explanation,
             isFlipped: false,
             isMatched: false
@@ -961,6 +963,7 @@ function createCards() {
             pairId: pair.id,
             content: pair.pair[1],
             icon: pair.icon,
+            iconImage: pair.iconImage ?? null,
             explanation: pair.explanation,
             isFlipped: false,
             isMatched: false
@@ -1002,11 +1005,14 @@ function createCardElement(card, index) {
     const cardDiv = document.createElement('div');
     cardDiv.className = 'card';
     cardDiv.dataset.index = index;
+    const iconMarkup = card.iconImage
+        ? `<img src="${card.iconImage}" alt="${card.content} ícone">`
+        : card.icon;
     
     cardDiv.innerHTML = `
         <div class="card-face card-back"></div>
         <div class="card-face card-front">
-            <div class="card-icon">${card.icon}</div>
+            <div class="card-icon">${iconMarkup}</div>
             <div class="card-content">${card.content}</div>
         </div>
     `;
