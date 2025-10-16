@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nanopartículas Poliméricas - Jogo da Memória</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Biblioteca de confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Background animado -->
+    <div class="animated-bg">
+        <div class="bubble" style="--i: 1"></div>
+        <div class="bubble" style="--i: 2"></div>
+        <div class="bubble" style="--i: 3"></div>
+        <div class="bubble" style="--i: 4"></div>
+        <div class="bubble" style="--i: 5"></div>
+        <div class="bubble" style="--i: 6"></div>
+        <div class="bubble" style="--i: 7"></div>
+        <div class="bubble" style="--i: 8"></div>
+    </div>
+    <!-- Tela de Introdução -->
+    <div class="intro-screen active" id="introScreen">
+        <div class="intro-content">
+            <div class="intro-header">
+                <div class="intro-icon">⚛️</div>
+                <h1 class="intro-title">Nanopartículas Poliméricas</h1>
+                <p class="intro-subtitle">Jogo da Memória em Nanotecnologia</p>
+            </div>
+            
+            <div class="intro-description">
+                <h2>🎯 Objetivo</h2>
+                <p>Domine os conceitos fundamentais de nanopartículas poliméricas, suas estruturas, polímeros e aplicações em drug delivery!</p>
+                
+                <div class="intro-features">
+                    <div class="feature">
+                        <span class="feature-icon">🎮</span>
+                        <span class="feature-text">12 pares científicos</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">🏆</span>
+                        <span class="feature-text">Sistema de pontuação</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">📚</span>
+                        <span class="feature-text">Conteúdo educativo</span>
+                    </div>
+                    <div class="feature">
+                        <span class="feature-icon">⏱️</span>
+                        <span class="feature-text">Contador de tempo</span>
+                    </div>
+                </div>
+                
+                <div class="intro-rules">
+                <h3>📖 Como Jogar</h3>
+                <ul>
+                    <li>Clique em duas cartas para virá-las</li>
+                    <li><strong>Acertou:</strong> +10 pontos + explicação científica</li>
+                    <li><strong>Modos de jogo:</strong> Escolha Sprint (6 pares, tempo controlado) ou Maratona (12 pares, sem limite de tempo)</li>
+                    <li>Complete todos os pares para reforçar seus conhecimentos em nanotecnologia!</li>
+                </ul>
+            </div>
+        </div>
+
+        <button class="btn-customize" id="btnOpenCustomizerIntro">
+            <span class="btn-customize-icon">🛠️</span>
+            <span class="btn-customize-text">Personalizar Cartas</span>
+        </button>
+
+        <button class="btn-start" id="btnStart">
+            <span class="btn-start-icon">🚀</span>
+            <span class="btn-start-text">Começar Jogo</span>
+        </button>
+
+        <p class="intro-footer">Desenvolvido para a matéria de Química de Polímeros</p>
+    </div>
+</div>
+
+<!-- Modal de Personalização -->
+<div class="modal" id="modalCustomizer">
+    <div class="modal-content customizer-modal">
+        <div class="customizer-header">
+            <div>
+                <h2>🧩 Personalizar Cartas</h2>
+                <p>Crie versões personalizadas das cartas para outros conteúdos. As alterações ficam salvas neste dispositivo.</p>
+            </div>
+            <button class="customizer-close" id="btnCloseCustomizer">✖</button>
+        </div>
+
+        <div class="customizer-controls">
+            <label for="customizerCardSelect">Selecione a carta:</label>
+            <select id="customizerCardSelect"></select>
+        </div>
+
+        <form id="customizerForm" class="customizer-form">
+            <div class="field-group">
+                <label for="customizerTitle">Título / Conceito</label>
+                <input type="text" id="customizerTitle" required maxlength="80" />
+            </div>
+            <div class="field-group">
+                <label for="customizerDescription">Definição (aparece na carta)</label>
+                <textarea id="customizerDescription" rows="3" required maxlength="220"></textarea>
+            </div>
+            <div class="field-group">
+                <label for="customizerExplanation">Explicação detalhada (modal)</label>
+                <textarea id="customizerExplanation" rows="4" required maxlength="400"></textarea>
+            </div>
+            <div class="field-group inline icon-picker-row">
+                <div class="icon-input-wrapper">
+                    <label for="customizerIcon">Ícone (emoji)</label>
+                    <div class="icon-input-group">
+                        <input type="text" id="customizerIcon" required maxlength="2" />
+                        <button type="button" class="btn-emoji" id="btnOpenEmojiPicker" title="Escolher emoji">😀</button>
+                    </div>
+                    <div class="emoji-picker" id="emojiPicker">
+                        <button type="button" data-emoji="⚛️">⚛️</button>
+                        <button type="button" data-emoji="🧬">🧬</button>
+                        <button type="button" data-emoji="🧪">🧪</button>
+                        <button type="button" data-emoji="🧠">🧠</button>
+                        <button type="button" data-emoji="💊">💊</button>
+                        <button type="button" data-emoji="🌱">🌱</button>
+                        <button type="button" data-emoji="🧫">🧫</button>
+                        <button type="button" data-emoji="🔬">🔬</button>
+                        <button type="button" data-emoji="🛡️">🛡️</button>
+                        <button type="button" data-emoji="☀️">☀️</button>
+                        <button type="button" data-emoji="🌊">🌊</button>
+                        <button type="button" data-emoji="🎯">🎯</button>
+                        <button type="button" data-emoji="🧊">🧊</button>
+                        <button type="button" data-emoji="⚡">⚡</button>
+                        <button type="button" data-emoji="🔵">🔵</button>
+                        <button type="button" data-emoji="🛠️">🛠️</button>
+                    </div>
+                </div>
+                <div>
+                    <label for="customizerId">ID</label>
+                    <input type="text" id="customizerId" disabled />
+                </div>
+            </div>
+            <div class="customizer-actions">
+                <button type="submit" class="btn-save">💾 Salvar Carta</button>
+                <button type="button" class="btn-reset" id="btnResetCustomizer">↩️ Restaurar Carta</button>
+            </div>
+        </form>
+
+        <div class="customizer-footer">
+            <button class="btn-reset-all" id="btnResetAllCards">🧼 Restaurar Todas as Cartas</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Confirmação -->
+<div class="modal" id="modalConfirm">
+    <div class="modal-content confirm-modal">
+        <h3 id="confirmTitle">Confirmar ação</h3>
+        <p id="confirmMessage">Tem certeza?</p>
+        <div class="confirm-actions">
+            <button class="btn-confirm" id="btnConfirmYes">Sim</button>
+            <button class="btn-cancel" id="btnConfirmNo">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="customizerToast"></div>
+
+<div class="container" id="gameContainer">
+        <!-- Cabeçalho -->
+        <header>
+            <h1>⚛️ Nanopartículas Poliméricas</h1>
+            <p class="subtitle">Jogo da Memória</p>
+        </header>
+
+        <div class="top-actions">
+            <button class="btn-back" id="btnBackToIntro">⬅️ Voltar ao Início</button>
+        </div>
+
+        <!-- Seleção de Modo -->
+        <div class="mode-selector" id="modeSelector">
+            <button class="mode-button" data-mode="sprint">⚡ Sprint (6 pares)</button>
+            <button class="mode-button active" data-mode="marathon">🧠 Maratona (12 pares)</button>
+        </div>
+
+        <div class="main-content">
+            <div class="game-section">
+                <!-- Painel de Informações -->
+                <div class="info-panel">
+                    <div class="info-card">
+                        <div class="info-label">Pontuação</div>
+                        <div class="info-value" id="score">0</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Tentativas</div>
+                        <div class="info-value" id="attempts">0</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Tempo</div>
+                        <div class="info-value" id="timer">00:00</div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-label">Pares Encontrados</div>
+                        <div class="info-value" id="pairs">0/12</div>
+                    </div>
+                </div>
+
+                <!-- Área do Jogo -->
+                <div class="game-board" id="gameBoard">
+                    <!-- As cartas serão inseridas aqui via JavaScript -->
+                </div>
+
+                <!-- Botão de Reiniciar -->
+                <div class="controls">
+                    <button class="btn-restart" id="btnRestart">🔄 Reiniciar Jogo</button>
+                </div>
+
+                <!-- Glossário -->
+                <aside class="glossary-panel" id="glossaryPanel">
+                    <div class="glossary-header">
+                        <h2>📘 Glossário</h2>
+                        <p>Revise os conceitos aprendidos durante a partida.</p>
+                    </div>
+                    <div class="glossary-list" id="glossaryList">
+                        <p class="glossary-empty" id="glossaryEmpty">Nenhum par registrado ainda.</p>
+                    </div>
+                    <div class="glossary-details" id="glossaryDetails">
+                        <h3 id="glossaryTitle">Selecione um termo</h3>
+                        <p id="glossaryDescription">À medida que você acerta pares, os conceitos aparecerão aqui.</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Modal de Explicação (ao acertar par) -->
+        <div class="modal" id="modalExplanation">
+            <div class="modal-content explanation-modal">
+                <h3 id="modalTitle">✅ Par Correto!</h3>
+                <p id="modalText"></p>
+                <button class="btn-close" id="btnCloseModal">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Conclusão -->
+        <div class="modal" id="modalFinish">
+            <div class="modal-content finish-modal">
+                <h2>🎉 Parabéns!</h2>
+                
+                <!-- Badge de Conquista -->
+                <div class="badge-container">
+                    <div class="badge-icon" id="badgeIcon">🏆</div>
+                    <div class="badge-title" id="badgeTitle">EXPERT EM NANOCIÊNCIA</div>
+                    <div class="badge-message" id="badgeMessage">Incrível! Você tem conhecimento excepcional!</div>
+                </div>
+                
+                <div class="finish-stats">
+                    <div class="stat">
+                        <span class="stat-label">Pontuação Final:</span>
+                        <span class="stat-value" id="finalScore">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Tempo Total:</span>
+                        <span class="stat-value" id="finalTime">00:00</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Tentativas:</span>
+                        <span class="stat-value" id="finalAttempts">0</span>
+                    </div>
+                </div>
+                <button class="btn-close" id="btnPlayAgain">🎮 Jogar Novamente</button>
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>💡 Domine os conceitos de nanopartículas poliméricas, estruturas, polímeros e aplicações em drug delivery</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
